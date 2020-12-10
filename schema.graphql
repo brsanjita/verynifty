@@ -1,6 +1,18 @@
-type ExampleEntity @entity {
+type Player @entity {
+  id: ID!   #address
+  vnftMinted: BigInt!
+  vnftKilled: BigInt!
+}
+
+type Vnft @entity {
   id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  approved: Bytes! # address
+  museMinted: BigInt!
+}
+
+type Summary @entity {
+  id: ID!
+  gasSpentMinting: BigInt!  ##Total gas spent for minting
+  gasSpentMining: BigInt!   ##Total gas spent for mining MUSE
+  gasSpentFeeding: BigInt!  ##Total gas spent for feeding
+  gasSpentKilling: BigInt!  ##Total gas spent for killing 
 }
